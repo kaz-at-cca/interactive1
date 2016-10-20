@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+		<title>
+			Examples - Click #1 (Click to animate)
+		</title>
+		<style>
+
+			body {
+				margin: 0;
+			}
+
+			.bar {
+				width: 200px;
+				height: 50px;
+				cursor: pointer;
+				float: left;
+			}
+
+			.bar.yellow {
+				background-color: #FFCD55;
+			}
+
+			.bar.blue {
+				background-color: #328896;
+			}
+
+			.bar.green {
+				background-color: #81CBB2;
+			}
+
+			.extend {
+				animation: extend_down 1s ease forwards;
+			}
+
+			@keyframes extend_down {
+				from {
+					height: 50px;
+				}
+				to {
+					height: 500px;
+				}
+			}
+
+		</style>
+
+		<script>
+			$(document).ready(function() {
+
+				/* when the bar is clicked, it extends down */
+				$(".bar").click(function(){
+					$(this).addClass('extend');
+				});
+	
+			});
+		</script>
+	</head>
+
+	<body>
+			
+			<div class="bar yellow"></div>
+			
+			<div class="bar blue"></div>
+			
+			<div class="bar green"></div>
+	
+	</body>
+</html>

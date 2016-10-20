@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+		<title>
+			Examples - Click #2 (Click to start animation of another element)
+		</title>
+		<style>
+
+			.button-group {
+				width: 330px;
+				overflow: auto;
+			}
+
+			.button {
+				transition: all 0.25s ease;
+				text-align: center;
+				float: left;
+				font-size: 30px;
+				line-height: 50px;
+				margin: 30px;
+				background-color: #FFCD55;
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				cursor: pointer;
+			}
+
+			.button.pressed {
+				color: #999;
+				background-color: #DDD;
+			}
+
+			.box-group {
+				width: 1000px;
+
+			}
+
+			.box {
+				opacity: 0;
+				font-size: 70px;
+				color: #666;
+				position: relative;
+				margin: 30px 0;
+			}
+
+			.text01 {text-align: left;}
+			.text02 {text-align: center;}
+			.text03 {text-align: right;}
+
+			.show {
+				animation: slide-reveal 1.5s forwards alternate;
+			}
+
+			@keyframes slide-reveal {
+				from {
+					opacity: 0;
+					transform: translate(0,0);
+				}
+				to {
+					opacity: 1;
+					transform: translate(100px,0);
+				}
+			}
+
+		</style>
+
+		<script>
+
+			$(document).ready(function() {
+
+				/* click on button 1, show the first line */
+				$(".btn01").click(function(){
+					$(this).addClass('pressed');
+					$(".text01").addClass('show');
+				});
+
+				/* click on button 2, show the second line */
+				$(".btn02").click(function(){
+					$(this).addClass('pressed');
+					$(".text02").addClass('show');
+				});
+
+				/* click on button 3, show the third line */
+				$(".btn03").click(function(){
+					$(this).addClass('pressed');
+					$(".text03").addClass('show');
+				});
+	
+			});
+
+		</script>
+	</head>
+
+	<body>
+			
+			<div class="button-group">
+				<div class="button btn01">1</div>
+				<div class="button btn02">2</div>
+				<div class="button btn03">3</div>
+			</div>
+
+			<div class="box-group">
+				<div class="box text01">deep beneath the sea</div>
+				<div class="box text02">upon those in deepest sleep</div>
+				<div class="box text03">cherry blossom petals fall</div>
+			</div>
+
+	
+	</body>
+</html>

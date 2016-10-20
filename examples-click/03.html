@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+		<title>
+			Examples - Click #3 (television)
+		</title>
+		<style>
+
+			/* container for tv, screen, and switches */
+			.tv {
+				width: 1000px;
+				height: 600px;
+				margin: 0 auto;
+				position: relative;
+			}
+
+			/* the screen */
+			#screen {
+				transition: all 0.25s ease;
+				position: absolute;
+		    top: 95px;
+		    left: 165px;
+				width: 540px;
+				height: 400px;
+				background-color:red;
+			}
+
+			/* the colors for the screen */
+			#screen.red {background-color:red;}
+			#screen.blue {background-color:blue;}
+			#screen.green {background-color:green;}
+			#screen.yellow {background-color:yellow;}
+			#screen.pink {background-color:pink;}
+			#screen.off {background-color:black;}
+
+			/* the tv set frame */
+			.frame {
+				width: 100%;
+				height: 100%;
+				background-image: url('tv.png');
+				background-size: contain;
+				background-position: center;
+				background-repeat: no-repeat;
+				position: absolute;
+			}
+
+			/* the container for all the switches */
+			.switches {
+				position: absolute;
+		    top: 304px;
+		    right: 242px;
+		    width: 38px;
+		    height: 157px;
+				background-color:rgba(0,0,0,0.5);
+			}
+
+			/* the switch */
+			.switch {
+				border-radius: 50%;
+		    width: 10px;
+		    height: 10px;
+		    position: absolute;
+		    left: 18px;
+				cursor: pointer;
+			}
+
+			/* the color & position of the switch */
+			.switch.red {
+				background-color: red;
+				top:18px;
+			}
+
+			.switch.green {
+				background-color: green;
+				top:48px;
+			}
+
+			.switch.blue {
+				background-color: blue;
+				top:79px;
+			}
+
+			.switch.yellow {
+				background-color: yellow;
+				top:109px;
+			}
+
+			.switch.pink {
+				background-color: pink;
+				top:140px;
+			}
+
+			/* the turn (power) switch */
+			.turn {
+				position: absolute;
+		    bottom: 133px;
+		    right: 161px;
+				width: 80px;
+				height: 80px;
+				background-image: url('turn.png');
+				background-size: contain;
+				cursor: pointer;
+				transform: rotate(0deg);
+			}
+
+			/* the off state for the turn switch */
+			.turn-off {
+				transform: rotate(70deg);
+			}
+			
+
+		</style>
+
+		<script>
+			$(document).ready(function() {
+
+				/* when the red switch is clicked, change screen to red */
+				$(".switch.red").click(function(){
+					$(".turn").removeClass('turn-off');
+					$("#screen").removeClass().addClass("red");
+				});
+
+				/* when the green switch is clicked, change screen to green */
+				$(".switch.green").click(function(){
+					$(".turn").removeClass('turn-off');
+					$("#screen").removeClass().addClass("green");
+				});
+
+				/* when the blue switch is clicked, change screen to blue */
+				$(".switch.blue").click(function(){
+					$(".turn").removeClass('turn-off');
+					$("#screen").removeClass().addClass("blue");
+				});
+
+				/* when the yellow switch is clicked, change screen to yellow */
+				$(".switch.yellow").click(function(){
+					$(".turn").removeClass('turn-off');
+					$("#screen").removeClass().addClass("yellow");
+				});
+
+				/* when the pink switch is clicked, change screen to pink */
+				$(".switch.pink").click(function(){
+					$(".turn").removeClass('turn-off');
+					$("#screen").removeClass().addClass("pink");
+				});
+
+				/* when the turn switch is clicked, turn off the screen */
+				$(".turn").click(function(){
+					$(".turn").toggleClass('turn-off');
+					$("#screen").toggleClass("off");
+				});
+			
+			});
+		</script>
+	</head>
+
+	<body>
+
+			<div class="tv">
+				<div id="screen"></div>
+		 		<div class="frame"></div>
+		 		<div class="switches">
+		 			<div class="switch red"></div>
+		 			<div class="switch green"></div>
+		 			<div class="switch blue"></div>
+		 			<div class="switch yellow"></div>
+		 			<div class="switch pink"></div>
+		 		</div>
+		 		<div class="turn"></div>
+		 	</div>
+		
+
+	</body>
+</html>
