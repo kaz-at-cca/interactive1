@@ -1,0 +1,32 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.2.4/wavesurfer.min.js"></script>
+</head>
+
+<body>
+  
+  <div id="waveform"></div>
+
+  <div style="text-align: center">
+    <button class="btn btn-primary" onclick="wavesurfer.playPause()">
+      Play
+    </button>
+  </div>
+
+  <script>
+
+  var wavesurfer = WaveSurfer.create({
+    container: '#waveform',
+    waveColor: 'red',
+    progressColor: 'purple'
+  });
+
+  wavesurfer.load('https://kevinkaocooper.github.io/interactive1/project3/speech.mp3');
+    
+  </script>
+
+</body>
+</html>
